@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balar Overseas | Global Sourcing, Import–Export & Logistics</title>
+<meta name="description" content="Balar Overseas – complete import-export support from sourcing to delivery. Market research, product sourcing, quality control, shipping, customs clearance and end-to-end logistics between China and India.">
+<link rel="icon" href="https://balaroverseas.com/wp-content/uploads/2026/02/balar-new-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@112..125,500;112..125,600;112..125,700;112..125,800&family=Inter:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body class="loading">
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader">
+  <div class="pl-top">
+    <span class="pl-brand">BALAR OVERSEAS</span>
+    <span class="mono" id="plPct">000</span>
+  </div>
+  <div class="pl-body">
+    <ul class="pl-list mono" id="plLeft"></ul>
+    <canvas id="plMap"></canvas>
+    <ul class="pl-list right mono" id="plRight"></ul>
+  </div>
+  <div class="pl-bar"><span id="plBar"></span></div>
+</div>
+
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head" data-theme="dark">
+  <div class="topbar">
+    <div class="ticker mono"><div class="ticker-track" id="ticker">
+      <span>NEWS: Balar Overseas now handles 18,120+ packages door-to-door across India</span>
+      <span>China ⇄ India sea freight: weekly consolidated LCL departures from Guangzhou &amp; Yiwu</span>
+      <span>New: pre-shipment quality inspection reports shared within 24 hours</span>
+    </div></div>
+    <div class="top-links mono">
+      <a href="https://wa.me/919898977266" target="_blank" rel="noopener">Track shipment</a>
+      <span>|</span>
+      <a href="#contact">Get a quote</a>
+    </div>
+  </div>
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Balar Overseas home"><img src="https://balaroverseas.com/wp-content/uploads/2026/02/balar-new-logo.png" alt="Balar Overseas"></a>
+    <button class="menu-btn mono" id="menuBtn" aria-expanded="false"><i class="dots"><b></b><b></b><b></b></i><span>Menu</span></button>
+    <a href="#contact" class="pill">Work with us</a>
+  </div>
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close mono" id="menuClose"><i>✕</i> Close</button>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-foot mono">Connect with us:</div>
+    <a class="menu-mail" href="mailto:balaroverseas@gmail.com">balaroverseas@gmail.com</a>
+  </div>
+</header>
+
+<!-- ================= HERO: GLOBE → ATMOSPHERE ================= -->
+<section class="hero" id="top" data-theme="dark">
+  <div class="hero-sticky">
+    <div class="stars"></div>
+    <div class="hero-globe"><canvas id="globe"></canvas><div class="globe-labels" id="globeLabels"></div></div>
+    <div class="hero-copy">
+      <div class="kicker">One partner</div>
+      <h1 class="display split">Every shipment.<br>Every border.</h1>
+      <p>Sourcing, quality control, freight and customs clearance — China to India, handled by one accountable team.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-light">Talk with us</a>
+        <a href="#services" class="btn btn-line">Our services</a>
+      </div>
+    </div>
+    <div class="atmo" id="atmo"></div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="intro" id="about" data-theme="light">
+  <div class="wrap intro-grid">
+    <div class="intro-left">
+      <img class="intro-img" src="https://balaroverseas.com/wp-content/uploads/2026/02/container-loading-and-unloading.png" alt="Container handling">
+      <h2 class="display intro-title"><span class="muted">We source it.</span><br>We own the outcome.</h2>
+    </div>
+    <div class="intro-right">
+      <p class="reveal-text" id="revealText">With sourcing, inspection, freight and customs under one roof, your imports move the way your business needs them to: <em>on time</em>, on budget and <em>without surprises</em>. No juggling agents. No lost handovers. Just one team in <em>India and China</em>, accountable from factory floor to your door.</p>
+      <a href="#why" class="btn btn-dark-line">Learn more about us</a>
+      <div class="stats">
+        <div class="stats-cap">From thousands of shipments, one promise</div>
+        <div class="stat"><div class="num" data-count="1251" data-suffix="+">0</div><div class="lbl">Worldwide clients</div></div>
+        <div class="stat"><div class="num" data-count="850" data-suffix="+">0</div><div class="lbl">Consignments managed</div></div>
+        <div class="stat"><div class="num" data-count="18120" data-suffix="+">0</div><div class="lbl">Packages delivered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY: CRANE → TRUCK → ROAD ================= -->
+<section class="journey" id="services" data-theme="light">
+  <div class="journey-sticky">
+    <div class="j-giant display" id="jGiant">Our services · Our services · Our services</div>
+    <canvas id="journeyCanvas"></canvas>
+    <div class="j-speed mono"><b id="jSpeed">00</b> KM/H</div>
+
+    <div class="j-panel" id="jPanel">
+      <div class="j-panel-head wrap">
+        <h2 class="display">Everything your import needs.<br><span class="muted">Under one roof.</span></h2>
+        <div class="j-panel-copy">
+          <p>From market research to customs clearance and final delivery, we bring years of hands-on trade experience to every order.</p>
+          <p>One integrated team means one partner, one point of contact and full visibility from factory to destination.</p>
+        </div>
+      </div>
+      <div class="j-cards" id="jCards">
+        <div class="j-card"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="M31 31l11 11M15 24l4-5 4 3 5-7"/></svg><h3>Market<br>research</h3><p>Demand, pricing and competitor insight before you invest a rupee.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M6 18l18-10 18 10v20L24 46 6 38z"/><path d="M6 18l18 10 18-10M24 28v18"/></svg><h3>Product<br>sourcing</h3><p>Verified factories and suppliers matched to your exact specifications.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M4 24l8-8 8 4 8-6 8 6 8 4M12 16l12 14c2 2 5 2 6 0l-6-6M20 20l10 10"/></svg><h3>Price<br>negotiation</h3><p>Best price, MOQ and payment terms — negotiated on the ground in China.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 24l6 6 11-12"/></svg><h3>Quality<br>control</h3><p>Pre-shipment inspection so only perfect goods leave the factory.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M4 20L24 8l20 12v24H4z"/><path d="M12 44V26h24v18M12 32h24M12 38h24"/></svg><h3>Loading &amp;<br>warehousing</h3><p>Secure storage, consolidation and supervised container loading.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M4 32h40l-5 10H9zM10 32V20h20v12M16 20v-8h8v8"/></svg><h3>Sea &amp; air<br>freight</h3><p>FCL, LCL and air cargo booked with the right carrier at the right price.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="38" rx="2"/><path d="M16 16h16M16 24h16M16 32h8M30 34l3 3 6-7"/></svg><h3>Customs<br>clearance</h3><p>Documentation, duties and compliance handled end to end.</p></div>
+        <div class="j-card"><svg viewBox="0 0 48 48"><path d="M2 14h26v20H2zM28 22h10l8 8v4H28z"/><circle cx="10" cy="38" r="4"/><circle cx="36" cy="38" r="4"/></svg><h3>Door-to-door<br>delivery</h3><p>Factory floor to your warehouse — one partner for every leg.</p></div>
+      </div>
+    </div>
+
+    <div class="j-rel" id="jRel">
+      <div class="j-rel-left">
+        <h2 class="display"><span class="muted">Reliability</span><br>at every milestone.</h2>
+        <p>Every service under one roof and one accountable team — your supply chain moves predictably, transparently and without excuses.</p>
+      </div>
+      <div class="j-rel-right">
+        <div class="j-feat"><svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="8"/><path d="M24 28v14M10 42h28M8 20h4M36 20h4M24 6v4"/></svg><h3>Shipment<br>updates</h3><p>Know where your cargo is at every milestone — photos, documents and status on WhatsApp.</p></div>
+        <div class="j-feat"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36"/></svg><h3>India &amp; China<br>presence</h3><p>Our own people on both ends of the route — faster decisions and fewer surprises.</p></div>
+        <div class="j-feat"><svg viewBox="0 0 48 48"><path d="M8 26a16 16 0 0132 0v10H32V26M8 36V26h8v10z"/></svg><h3>Always<br>reachable</h3><p>A real person who knows your order, a phone call or a message away.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY: SHIP → CLOUDS ================= -->
+<section class="ship curve" id="why" data-theme="dark">
+  <div class="ship-sticky">
+    <canvas id="shipCanvas"></canvas>
+    <div class="why-title" id="whyTitle">
+      <div class="mono">Why us</div>
+      <h2 class="display">Logistics that works<br>as hard as you do.</h2>
+    </div>
+    <div class="why-cards" id="whyCards">
+      <div class="why-card"><svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="7"/><path d="M10 42c0-8 6-13 14-13s14 5 14 13"/></svg><h3>One point<br>of contact</h3><p>No chasing multiple vendors. One team manages your order from supplier to doorstep.</p></div>
+      <div class="why-card"><svg viewBox="0 0 48 48"><path d="M6 24s7-12 18-12 18 12 18 12-7 12-18 12S6 24 6 24z"/><circle cx="24" cy="24" r="5"/></svg><h3>Full<br>visibility</h3><p>Photos, inspection reports and shipment updates before problems become delays.</p></div>
+      <div class="why-card"><svg viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 24l6 6 11-12"/></svg><h3>Verified<br>suppliers</h3><p>We work only with checked factories, so what you order is what you receive.</p></div>
+      <div class="why-card"><svg viewBox="0 0 48 48"><path d="M24 6v36M32 12H20a6 6 0 000 12h8a6 6 0 010 12H14"/></svg><h3>Transparent<br>pricing</h3><p>No hidden fees. Clear, all-inclusive quotes backed by real negotiation.</p></div>
+      <div class="why-card"><svg viewBox="0 0 48 48"><path d="M8 14l10 10-10 10M22 14l10 10-10 10M36 14l10 10-10 10"/></svg><h3>Fast issue<br>resolution</h3><p>When something unexpected happens, we don't point fingers — we fix it and protect your timeline.</p></div>
+    </div>
+    <div class="veil" id="shipVeil"></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS + PLANE ================= -->
+<section class="testi" id="testimonials" data-theme="light">
+  <div class="plane-stage"><canvas id="planeCanvas"></canvas></div>
+  <div class="wrap testi-head">
+    <h2 class="display split">Trusted by businesses<br>worldwide.</h2>
+    <p>From first-time importers to high-volume traders, our clients stay because we deliver what we promise.</p>
+  </div>
+  <div class="wrap testi-list">
+    <article class="t-row">
+      <div class="t-who"><div class="t-av">MB</div><b>Manish Bhalani</b><span>Importer, verified client</span></div>
+      <blockquote>Excellent import services! The team handled everything professionally — from sourcing to customs clearance. Shipments arrived on time and in perfect condition, with transparent communication throughout. Strongly recommended for hassle-free imports.</blockquote>
+    </article>
+    <article class="t-row">
+      <div class="t-who"><div class="t-av">PD</div><b>Priyanka Deval</b><span>Retailer, verified client</span></div>
+      <blockquote>Highly regarded for superior product standards and streamlined shipping that ensures on-time delivery. Transparent business dealings and affordable rates make Balar Overseas a dependable partner for global trade. Trustworthy.</blockquote>
+    </article>
+    <article class="t-row">
+      <div class="t-who"><div class="t-av">BB</div><b>Barnalika Bhattacharjee</b><span>Business owner, verified client</span></div>
+      <blockquote>They provide really great service. A versatile range of products at a very affordable price. The shipment arrived safely and before time, and the product quality is excellent. Very happy with the service.</blockquote>
+    </article>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES GRID ================= -->
+<section class="industries" id="industries" data-theme="light">
+  <div class="wrap">
+    <div class="grid-label"><span>What we import</span><b>Industries</b></div>
+    <div class="ind-grid" id="indGrid"></div>
+  </div>
+</section>
+
+<!-- ================= ARC → DARK ================= -->
+
+<section class="drives curve glow" data-theme="dark">
+  <div class="wrap drives-grid">
+    <div class="drives-left">
+      <h2 class="display"><span class="muted">What</span><br>drives us</h2>
+      <p>Expanding into international markets unlocks powerful growth. Here is how we help businesses get there.</p>
+      <a href="#contact" class="btn btn-line">Work with us</a>
+    </div>
+    <div class="drives-list">
+      <article class="d-card"><img src="https://balaroverseas.com/wp-content/uploads/2026/02/vision-new.png" alt=""><div><div class="mono">Vision</div><h3>A globally trusted import–export partner</h3><p>Seamless trade solutions that let businesses of every size expand beyond borders.</p></div></article>
+      <article class="d-card"><img src="https://balaroverseas.com/wp-content/uploads/2026/02/mission.png" alt=""><div><div class="mono">Mission</div><h3>Sourcing to delivery, under one roof</h3><p>Reliable sourcing, strategic negotiation, quality control and end-to-end logistics.</p></div></article>
+      <article class="d-card"><img src="https://balaroverseas.com/wp-content/uploads/2026/02/objective-new-2.png" alt=""><div><div class="mono">Objective</div><h3>Safe, timely, damage-free shipments</h3><p>Verified suppliers, optimised costs and smooth customs for sustainable growth.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq curve" id="faq" data-theme="light">
+  <div class="wrap faq-grid">
+    <div><h2 class="display">F.A.Q</h2><p>Straightforward answers, so you can move forward with confidence.</p></div>
+    <div class="faq-list" id="faqList">
+      <div class="qa"><button><span class="mono">01</span>What does Balar Overseas do?<i></i></button><div class="ans"><p>Complete import support — market research, product sourcing, negotiation, quality control, warehousing, shipping, customs clearance and door-to-door delivery.</p></div></div>
+      <div class="qa"><button><span class="mono">02</span>Which products do you source?<i></i></button><div class="ans"><p>Home &amp; kitchen, health &amp; personal care, baby products, beauty, furniture, mobile accessories, sports &amp; fitness, toys and electronics — and more on request.</p></div></div>
+      <div class="qa"><button><span class="mono">03</span>Which shipping methods do you offer?<i></i></button><div class="ans"><p>Sea freight (FCL and LCL), air freight and door-to-door courier, chosen for the best balance of cost and speed.</p></div></div>
+      <div class="qa"><button><span class="mono">04</span>Do you handle customs clearance?<i></i></button><div class="ans"><p>Yes. We prepare documentation, calculate duties and manage clearance at the Indian port so your goods move without delays.</p></div></div>
+      <div class="qa"><button><span class="mono">05</span>Is there a minimum order quantity?<i></i></button><div class="ans"><p>MOQ depends on the product and factory. We negotiate practical MOQs — from small trial orders to full containers.</p></div></div>
+      <div class="qa"><button><span class="mono">06</span>How do I get a quote?<i></i></button><div class="ans"><p>Send your product, quantity and delivery city on WhatsApp, phone or email and we'll reply with a clear, all-inclusive quote.</p></div></div>
+    </div>
+    <div class="faq-side"><p>Still have questions? Our team is here to help.</p><a href="mailto:balaroverseas@gmail.com" class="mono link">Email us →</a></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta curve" id="contact" data-theme="dark">
+  <div class="rings"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="cta-inner">
+    <h2 class="display split">Ready to import<br>smarter?</h2>
+    <p>We're here to help you grow without hassle. No call centres. No runaround. Just experienced people ready to help.</p>
+    <a href="https://wa.me/919898977266" target="_blank" rel="noopener" class="btn btn-line">Work with us</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="curve" data-theme="light">
+  <div class="wrap">
+    <div class="f-top">
+      <img class="f-img" src="https://balaroverseas.com/wp-content/uploads/2026/02/balar-overseas-2.png" alt="">
+      <div class="f-contact">
+        <div><span class="mono">Email</span><a href="mailto:balaroverseas@gmail.com">balaroverseas@gmail.com</a></div>
+        <div><span class="mono">Hotline</span><a href="tel:+919898977266">+91 98989 77266 (India)</a><a href="tel:+8617602077266">+86 176 0207 7266 (China)</a></div>
+        <div><span class="mono">Office hours</span><b>Monday – Saturday / 10 AM – 7 PM</b></div>
+      </div>
+    </div>
+    <div class="f-mid">
+      <div>
+        <span class="mono">Head office</span>
+        <p class="f-addr">146, Royal Square, Opp. Silver Business Point,<br>Utran, Surat, Gujarat 394105, India</p>
+        <a class="f-dir" href="https://www.google.com/maps/search/?api=1&query=Royal+Square+Utran+Surat" target="_blank" rel="noopener">↪ Directions on Google</a>
+        <span class="mono f-op">Operating across</span>
+        <p class="f-ops">India / China</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/balar.overseas/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/balaroverseas/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/balar-overseas-a5806a246/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <canvas id="footMap"></canvas>
+    </div>
+    <div class="f-legal mono">
+      <span>© <span id="yr">2026</span> Balar Overseas. All rights reserved.</span>
+      <span>Surat · Guangzhou</span>
+    </div>
+    <div class="f-links mono"><a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a><a href="#">Shipping policy</a></div>
+  </div>
+  <div class="f-particles"><canvas id="footParticles"></canvas></div>
+</footer>
+
+<a class="wa" href="https://wa.me/919898977266" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-4 1 1.1-3.9-.3-.4A10.6 10.6 0 015.3 16C5.3 10.1 10.1 5.3 16 5.3S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 01-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+</body>
+</html>
