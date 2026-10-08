@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Balar Overseas</title>
+<meta name="description" content="Market research, product sourcing, negotiation, quality control, warehousing, sea and air freight, customs clearance and door-to-door delivery.">
+<link rel="icon" href="https://balaroverseas.com/wp-content/uploads/2026/02/balar-new-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@112..125,500;112..125,600;112..125,700;112..125,800&family=Inter:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/pages/services.js"></script>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head" data-theme="dark">
+  <div class="topbar">
+    <div class="ticker mono"><div class="ticker-track">
+      <span>NEWS: Balar Overseas now handles 18,120+ packages door-to-door across India</span>
+      <span>China ⇄ India sea freight: weekly consolidated LCL departures from Guangzhou &amp; Yiwu</span>
+      <span>New: pre-shipment quality inspection reports shared within 24 hours</span>
+    </div></div>
+    <div class="top-links mono"><a href="https://wa.me/919898977266" target="_blank" rel="noopener">Track shipment</a><span>|</span><a href="contact.html">Get a quote</a></div>
+  </div>
+  <div class="bar">
+    <a href="index.html" class="logo" aria-label="Balar Overseas home"><img src="https://balaroverseas.com/wp-content/uploads/2026/02/balar-new-logo.png" alt="Balar Overseas"></a>
+    <button class="menu-btn mono" id="menuBtn" aria-expanded="false"><i class="dots"><b></b><b></b><b></b></i><span>Menu</span></button>
+    <a href="contact.html" class="pill">Work with us</a>
+  </div>
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close mono" id="menuClose"><i>✕</i> Close</button>
+    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="index.html#why">Why us</a><a href="contact.html">Contact</a></nav>
+    <div class="menu-foot mono">Connect with us:</div>
+    <a class="menu-mail" href="mailto:balaroverseas@gmail.com">balaroverseas@gmail.com</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="page-hero" data-theme="dark">
+  <canvas class="ph-canvas" id="heroMap"></canvas>
+  <div class="mono ph-crumb ph-fade"><a href="index.html">Home</a> / Services</div>
+  <div class="wrap ph-inner">
+    <div>
+      <div class="ph-kicker ph-fade">Global sourcing coverage</div>
+      <h1 class="display ph-title split">Import–export,<br>end to end</h1>
+    </div>
+    <div class="ph-side ph-fade">
+      <div class="cycle"><div class="cycle-track">
+        <span>Product sourcing &amp; negotiation</span>
+        <span>Quality control &amp; inspection</span>
+        <span>Sea, air &amp; courier freight</span>
+        <span>Customs clearance &amp; delivery</span>
+        <span>Product sourcing &amp; negotiation</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIBILITY ================= -->
+<section class="sec curve" data-theme="light">
+  <div class="wrap">
+    <div class="center-intro">
+      <div class="mono sec-label" style="justify-content:center">Visibility</div>
+      <h2 class="display h-xl split"><span class="muted">Updates-first</span><br>operations &amp; visibility</h2>
+      <p class="rise">Every order handled by Balar Overseas comes with clear milestones, photos and documents, so you always know where your goods are and what happens next.</p>
+    </div>
+    <div class="tech-cards">
+      <div class="tech-card rise">
+        <span class="mono">· Route view · China → India</span>
+        <div class="route">
+          <canvas id="routeMap"></canvas>
+          <svg viewBox="0 0 400 250" preserveAspectRatio="none"><path class="route-dash" d="M325 93 C 318 135, 290 135, 281 96"/><circle cx="325" cy="93" r="4" fill="#fff"/><circle cx="281" cy="96" r="5" fill="#ffb36b"/></svg>
+        </div>
+      </div>
+      <div class="tech-card rise">
+        <span class="mono">· Shipment status</span>
+        <div class="track-ui">
+          <div class="row"><b>Order BO-2417 · Kitchenware</b><span class="pill-s">In transit</span></div>
+          <div class="bar"><i></i></div>
+          <div class="row"><span>Supplier verified · Yiwu</span><span class="pill-s done">Done</span></div>
+          <div class="row"><span>Pre-shipment inspection · 32 photos</span><span class="pill-s done">Done</span></div>
+          <div class="row"><span>Sea freight · Ningbo → Nhava Sheva</span><span class="pill-s">ETA 12 days</span></div>
+          <div class="row"><span>Customs clearance · Mumbai</span><span class="pill-s">Next</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="sec" data-theme="light" style="background:#f4f4f4">
+  <div class="wrap center-intro">
+    <div class="mono sec-label" style="justify-content:center">Our services</div>
+    <h2 class="display h-xl split"><span class="muted">Integrated sourcing</span><br>for growing businesses</h2>
+    <p class="rise">We deliver complete import support tailored to how your business actually buys — helping you find better suppliers, avoid quality surprises and move goods efficiently from China to anywhere in India.</p>
+  </div>
+</section>
+
+<!-- ================= CORE SERVICES ================= -->
+<section class="sec sec-dark curve" id="core" data-theme="dark">
+  <div class="wrap svc-main">
+    <nav class="svc-nav" id="svcNav">
+      <span class="mono">Core services</span>
+      <a href="#s1" class="on">Market research</a>
+      <a href="#s2">Product sourcing</a>
+      <a href="#s3">Price negotiation</a>
+      <a href="#s4">Quality control</a>
+      <a href="#s5">Loading &amp; warehousing</a>
+      <a href="#s6">Sea &amp; air freight</a>
+      <a href="#s7">Customs clearance</a>
+      <a href="#s8">Door-to-door delivery</a>
+      <a href="contact.html" class="btn btn-light" style="margin-top:24px;border:0;display:inline-flex">Start your shipment</a>
+    </nav>
+    <div>
+      <article class="svc-block" id="s1"><h2 class="display">Market research</h2><p class="sub">Know the market before you invest.</p><div class="cols"><div><p>We study demand, landed cost and competition for the products you want to import, so you start with the right product, the right quantity and a realistic selling price.</p><ul><li>Product &amp; price benchmarking</li><li>Landed-cost estimate (product + freight + duty)</li><li>Supplier landscape in China</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/word-map.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s2"><h2 class="display">Product sourcing</h2><p class="sub">Verified factories matched to your specs.</p><div class="cols"><div><p>Our team in China shortlists manufacturers that fit your quality, price and MOQ, checks their credentials and collects samples so you can choose with confidence.</p><ul><li>Supplier search &amp; verification</li><li>Samples collected and shipped to you</li><li>Factory visits where needed</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/consignment.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s3"><h2 class="display">Price negotiation</h2><p class="sub">Better price, MOQ and payment terms.</p><div class="cols"><div><p>We negotiate on the ground in the local language — on unit price, minimum order, packaging and payment terms — so you get factory-direct pricing without the risk.</p><ul><li>Unit price &amp; MOQ negotiation</li><li>Packaging and labelling terms</li><li>Safe payment milestones</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/mission.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s4"><h2 class="display">Quality control</h2><p class="sub">Problems fixed before goods leave China.</p><div class="cols"><div><p>Before shipping, our inspectors check quantity, finish, function and packaging against your order and share photos and a short report within 24 hours.</p><ul><li>Pre-shipment inspection</li><li>Photo &amp; video reports</li><li>Re-work coordination with the factory</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/objective-new-2.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s5"><h2 class="display">Loading &amp; warehousing</h2><p class="sub">Consolidated, protected, supervised.</p><div class="cols"><div><p>Goods from several suppliers are received at our partner warehouse, consolidated into one shipment and loaded under supervision to avoid damage and save freight cost.</p><ul><li>Multi-supplier consolidation</li><li>Secure storage</li><li>Supervised container loading</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/container-loading-and-unloading.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s6"><h2 class="display">Sea &amp; air freight</h2><p class="sub">The right carrier at the right price.</p><div class="cols"><div><p>FCL, LCL, air cargo or courier — we choose the mode that balances cost and speed for each order and book it with reliable carriers.</p><ul><li>FCL &amp; LCL sea freight</li><li>Air freight &amp; express courier</li><li>Booking, documents &amp; tracking</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/balar-overseas-2.png" alt="" loading="lazy" style="object-fit:cover"></div></article>
+      <article class="svc-block" id="s7"><h2 class="display">Customs clearance</h2><p class="sub">Paperwork and duties, handled.</p><div class="cols"><div><p>We prepare the documentation, calculate duties in advance and manage clearance at the Indian port so your shipment is released without delays or surprises.</p><ul><li>Documentation &amp; HS classification</li><li>Duty calculation upfront</li><li>Port clearance in India</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/vision-new.png" alt="" loading="lazy"></div></article>
+      <article class="svc-block" id="s8"><h2 class="display">Door-to-door delivery</h2><p class="sub">From factory floor to your warehouse.</p><div class="cols"><div><p>After clearance we deliver to your address anywhere in India — one partner and one point of contact for every leg of the journey.</p><ul><li>Pan-India delivery</li><li>Proof of delivery</li><li>Damage-free handling</li></ul><a href="contact.html" class="btn btn-line">Start your shipment</a></div><img src="https://balaroverseas.com/wp-content/uploads/2026/02/packages-delivered-1.png" alt="" loading="lazy"></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta curve" id="contact" data-theme="dark">
+  <div class="rings"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="cta-inner">
+    <h2 class="display split">Ready to import<br>smarter?</h2>
+    <p>We're here to help you grow without hassle. No call centres. No runaround. Just experienced people ready to help.</p>
+    <a href="contact.html" class="btn btn-line">Work with us</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="curve" data-theme="light">
+  <div class="wrap">
+    <div class="f-top">
+      <img class="f-img" src="https://balaroverseas.com/wp-content/uploads/2026/02/balar-overseas-2.png" alt="">
+      <div class="f-contact">
+        <div><span class="mono">Email</span><a href="mailto:balaroverseas@gmail.com">balaroverseas@gmail.com</a></div>
+        <div><span class="mono">Hotline</span><a href="tel:+919898977266">+91 98989 77266 (India)</a><a href="tel:+8617602077266">+86 176 0207 7266 (China)</a></div>
+        <div><span class="mono">Office hours</span><b>Monday – Saturday / 10 AM – 7 PM</b></div>
+      </div>
+    </div>
+    <div class="f-mid">
+      <div>
+        <span class="mono">Head office</span>
+        <p class="f-addr">146, Royal Square, Opp. Silver Business Point,<br>Utran, Surat, Gujarat 394105, India</p>
+        <a class="f-dir" href="https://www.google.com/maps/search/?api=1&query=Royal+Square+Utran+Surat" target="_blank" rel="noopener">↪ Directions on Google</a>
+        <span class="mono f-op">Operating across</span>
+        <p class="f-ops">India / China</p>
+        <div class="f-social"><a href="https://www.facebook.com/balar.overseas/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/balaroverseas/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/balar-overseas-a5806a246/" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+      <canvas id="footMap"></canvas>
+    </div>
+    <div class="f-legal mono"><span>© <span id="yr">2026</span> Balar Overseas. All rights reserved.</span><span>Surat · Guangzhou</span></div>
+    <div class="f-links mono"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="f-particles"><canvas id="footParticles"></canvas></div>
+</footer>
+
+<a class="wa" href="https://wa.me/919898977266" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-4 1 1.1-3.9-.3-.4A10.6 10.6 0 015.3 16C5.3 10.1 10.1 5.3 16 5.3S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 01-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+</body>
+</html>

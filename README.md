@@ -7,9 +7,16 @@ Scroll-driven 3D home page for **Balar Overseas** (global sourcing, import–exp
 | Path | What it is |
 |---|---|
 | `index.html` | Home page (3D version) |
+| `about.html` | About: story, difference, vision/mission/objective, values, teams, FAQ |
+| `services.html` | Services: visibility, sticky service list with 8 core services |
+| `industries.html` | Industries: 3D forest-road hero + 9 industry rows |
+| `contact.html` | Contact: details, quote form (opens WhatsApp / email), offices map |
 | `index-static.html` | Earlier plain HTML version (backup) |
 | `css/style.css` | All styles |
-| `js/main.js` | Smooth scroll, section transitions, preloader, overlays |
+| `js/common.js` | Shared: smooth scroll, header, menu, cursor, reveals, curves, footer, page transitions |
+| `js/main.js` | Home page: preloader, 3D scenes and their scroll overlays |
+| `js/pages/` | Per-page scripts for About, Services, Industries, Contact |
+| `js/scenes/roadhero.js` | Industries hero: truck on a forest road |
 | `js/scenes/globe.js` | Hero: dotted 3D globe with trade routes |
 | `js/scenes/journey.js` | Reach stacker → truck → road (one continuous scene) |
 | `js/scenes/ship.js` | "Why us": container ship + climb into clouds |

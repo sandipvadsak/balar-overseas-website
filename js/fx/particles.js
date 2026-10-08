@@ -8,6 +8,7 @@ export function particleText(canvas, text = 'BALAROVERSEAS', opts = {}) {
   function build() {
     dpr = Math.min(devicePixelRatio || 1, 2);
     W = canvas.clientWidth; H = canvas.clientHeight;
+    if (!W || !H) return;
     canvas.width = W * dpr; canvas.height = H * dpr;
     g.setTransform(dpr, 0, 0, dpr, 0, 0);
 
