@@ -1,4 +1,5 @@
 import { drawDotMap } from './fx/dotmap.js';
+import { sequencePlayer } from './fx/sequence.js';
 import { $, $$, range, wait, initCommon, setupReveals, setupCurves, setupFooter, revealPage } from './common.js';
 
 const { gsap, ScrollTrigger } = window;
@@ -76,6 +77,15 @@ function setupJourney(journey) {
   const sec = $('#services');
   const giant = $('#jGiant'), panel = $('#jPanel'), cards = $('#jCards'), rel = $('#jRel'), speed = $('.j-speed');
   const feats = $$('.j-feat');
+  // Blender stacker render plays over the first part of phase A, then hands over to the live scene
+  const seqWrap = $('#jSeq');
+  // the wheels' contact line (87% down each frame) sits on the top edge of a thin black ground band
+  const GROUND = 0.9;
+  const seq = sequencePlayer($('#stackSeq'), {
+    dir: 'seq/stacker', count: 150, bleed: 0.15, anchor: [0.87, GROUND],
+  });
+  seqWrap.style.setProperty('--gh', `${(1 - GROUND) * 100}%`);
+  const SEQ_END = 0.17;
   let cardsMax = 0;
   const measure = () => { cardsMax = Math.max(0, cards.scrollWidth - innerWidth + 40); };
   measure();
@@ -86,9 +96,14 @@ function setupJourney(journey) {
     onUpdate: (s) => {
       const P = s.progress;
       journey && journey.setProgress(P);
+      seq.setProgress(range(P, 0, SEQ_END - 0.02));
+      const so = 1 - range(P, SEQ_END - 0.02, SEQ_END);
+      seqWrap.style.opacity = so;
+      seqWrap.style.visibility = so > 0 ? 'visible' : 'hidden';
       // B: services panel
       const show = range(P, 0.3, 0.37) - range(P, 0.6, 0.65);
       panel.style.transform = `translateY(${(1 - show) * 105}%)`;
+      panel.style.visibility = show > 0 ? 'visible' : 'hidden';   // its glow otherwise peeks in at the bottom
       cards.style.transform = `translateX(${-range(P, 0.37, 0.59) * cardsMax}px)`;
       giant.style.opacity = range(P, 0.25, 0.3) - range(P, 0.6, 0.64);
       giant.style.transform = `translateX(${-range(P, 0.25, 0.64) * 55}%)`;

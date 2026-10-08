@@ -1,7 +1,7 @@
 // Scroll-scrubbed image sequence (pre-rendered Blender frames) drawn on a canvas.
 // Frames load progressively: first frame, then a coarse pass, then everything else,
 // so scrubbing works immediately and sharpens as frames arrive.
-export function sequencePlayer(canvas, { dir, count, ext = 'webp', fit = 'contain', align = 'center' }) {
+export function sequencePlayer(canvas, { dir, count, ext = 'webp', fit = 'contain', align = 'center', bleed = 0, anchor = null, onLayout = null }) {
   const g = canvas.getContext('2d');
   const frames = new Array(count).fill(null);
   let current = 0, W = 0, H = 0, dpr = 1;
@@ -40,11 +40,14 @@ export function sequencePlayer(canvas, { dir, count, ext = 'webp', fit = 'contai
     if (!img || !W) return;
     g.setTransform(dpr, 0, 0, dpr, 0, 0);
     g.clearRect(0, 0, W, H);
-    const s = fit === 'cover' ? Math.max(W / img.width, H / img.height) : Math.min(W / img.width, H / img.height);
+    // 'contain' may crop up to `bleed` of the width on narrow screens so the subject stays large
+    const s = fit === 'cover' ? Math.max(W / img.width, H / img.height) : Math.min((W / img.width) * (1 + bleed), H / img.height);
     const w = img.width * s, h = img.height * s;
     const x = (W - w) / 2;
-    const y = align === 'bottom' ? H - h : (H - h) / 2;
+    // anchor [a, b]: put the point a (fraction of image height) at b (fraction of canvas height)
+    const y = anchor ? H * anchor[1] - h * anchor[0] : align === 'bottom' ? H - h : (H - h) / 2;
     g.drawImage(img, x, y, w, h);
+    onLayout && onLayout({ x, y, w, h, W, H });
   }
 
   new ResizeObserver(resize).observe(canvas);
